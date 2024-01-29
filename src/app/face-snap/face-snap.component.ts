@@ -11,6 +11,8 @@ export class FaceSnapComponent implements OnInit {
   createdDate!: Date;
   snaps!: number;
   imageUrl!: string;
+  dislikeButton!: string;
+  LikeButton!: string;
 
   ngOnInit(): void {
       this.title = 'Germain';
@@ -18,14 +20,29 @@ export class FaceSnapComponent implements OnInit {
       this.createdDate = new Date();
       this.snaps = 6;
       this.imageUrl = 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
+      this.LikeButton = "❤️";
+      this.dislikeButton = "👎";
   }
 
-  onAddSnaps(){
-    this.snaps++;
+  onLike(){
+    if(this.LikeButton === "❤️"){
+      this.snaps++;
+      this.LikeButton = "💕";
+    }else{
+      this.snaps--;
+      this.LikeButton = "❤️";
+    }
   }
 
-  onDecreaseSnaps(){
-    this.snaps--;
+  onDislike(){
+    if(this.dislikeButton === "👎"){
+      this.snaps--;
+      this.dislikeButton = "💔";
+    }
+    else{
+      this.snaps++;
+      this.dislikeButton = "👎"
+    }
   }
 
 }

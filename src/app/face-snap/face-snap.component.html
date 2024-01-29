@@ -5,10 +5,10 @@
     <img [src]="imageUrl" [alt]="title">
     <p>{{ description }}</p>
     <p>
-        <button (click)="onAddSnaps()">❤️</button>
+        <button (click)="onLike()">{{LikeButton}}</button>
          {{ snaps }}
 
-        <button (click)="onDecreaseSnaps()">👎</button>
+        <button (click)="onDislike()">{{dislikeButton}}</button>
     </p>
         
   </div>
